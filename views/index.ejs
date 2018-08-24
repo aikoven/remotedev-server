@@ -26,21 +26,16 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="//unpkg.com/react@15.4/dist/react.min.js"></script>
-    <script src="//unpkg.com/react-dom@15.4/dist/react-dom.min.js"></script>
-    <script src="//unpkg.com/@aikoven/remotedev-app@0.0.1/dist/remotedev-app.min.js"></script>
+    <script src="//unpkg.com/@aikoven/remotedev-app@0.0.7/dist/remotedev-app.js"></script>
     <script>
       window.remotedevOptions = {
         hostname: location.hostname,
         port: location.port,
         autoReconnect: true
       };
-      ReactDOM.render(
-        React.createElement(RemoteDevApp, {
-          socketOptions: window.remotedevOptions
-        }),
-        document.querySelector('#root')
-      );
+      RemoteDevApp(document.querySelector('#root'), {
+        socketOptions: window.remotedevOptions
+      });
     </script>
   </body>
 </html>
